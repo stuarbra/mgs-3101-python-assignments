@@ -1,5 +1,12 @@
 import pandas as pd
 df = pd.read_excel("Coffee Shop Sales.xlsx")
-print(df.head())
-print(df.columns)
-print(df.info())
+drinks = df[df["product_category"] == "Coffee"]
+drinks_sold = drinks["transaction_qty"].sum()
+price_per_drink = drinks["unit_price"].mean()
+print(drinks_sold, price_per_drink)
+bakery = df[df["product_category"] == "Bakery"]
+bakery_sold = bakery["transaction_qty"].sum()
+price_per_bakery = bakery["unit_price"].mean()
+print(bakery_sold, price_per_bakery)
+shop_name = "Mug Life"
+print (shop_name)
