@@ -25,3 +25,6 @@ sales_by_product = df.groupby("product_detail")["revenue"].sum()
 print(sales_by_product.sort_values(ascending=False).head(5))
 sales_by_store = df.groupby("store_location")["revenue"].sum()
 print(sales_by_store.sort_values(ascending=False))
+df["hour"] = df["transaction_time"].astype(str).str[:2]
+sales_by_hour = df.groupby("hour")["revenue"].sum()
+print(sales_by_hour.sort_values(ascending=False))
