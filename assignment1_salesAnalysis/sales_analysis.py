@@ -14,7 +14,14 @@ drinks_revenue = drinks_sold * price_per_drink
 bakery_revenue = bakery_sold * price_per_bakery
 total_revenue = drinks_revenue + bakery_revenue
 print(total_revenue)
-if total_revenue > 500:
+if total_revenue >= 500:
     print ("revenue is at least 500")
 else: 
     print ("revenue is less than 500")
+df["revenue"] = df["transaction_qty"] * df["unit_price"]
+sales_by_category = df.groupby("product_category")["revenue"].sum()
+print(sales_by_category.sort_values(ascending=False))
+sales_by_product = df.groupby("product_detail")["revenue"].sum()
+print(sales_by_product.sort_values(ascending=False).head(5))
+sales_by_store = df.groupby("store_location")["revenue"].sum()
+print(sales_by_store.sort_values(ascending=False))
