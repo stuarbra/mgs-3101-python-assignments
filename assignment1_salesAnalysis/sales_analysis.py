@@ -14,3 +14,7 @@ drinks_revenue = drinks_sold * price_per_drink
 bakery_revenue = bakery_sold * price_per_bakery
 total_revenue = drinks_revenue + bakery_revenue
 print(total_revenue)
+if total_revenue > 500:
+    print ("revenue is at least 500")
+else: 
+    print ("revenue is less than 500")
