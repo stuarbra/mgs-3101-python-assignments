@@ -10,3 +10,7 @@ price_per_bakery = bakery["unit_price"].mean()
 print(bakery_sold, price_per_bakery)
 shop_name = "Mug Life"
 print (shop_name)
+drinks_revenue = drinks_sold * price_per_drink
+bakery_revenue = bakery_sold * price_per_bakery
+total_revenue = drinks_revenue + bakery_revenue
+print(total_revenue)
